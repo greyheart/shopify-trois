@@ -13,7 +13,7 @@ from requests.models import PreparedRequest
 from requests.structures import CaseInsensitiveDict
 
 
-class OAuthEngine():
+class OAuthEngine( object ):
     """The OAuth engine is a base adapter implementation for the
     Shopify API using the OAuth authentication mechanism.
 

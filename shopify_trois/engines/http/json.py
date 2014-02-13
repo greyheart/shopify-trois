@@ -35,7 +35,7 @@ class Json(OAuthEngine):
     def __init__(self, shop_name, credentials, ignore_supported=False,
                  ignore_model_properties=False):
 
-        super().__init__(shop_name=shop_name, credentials=credentials)
+        super(Json, self).__init__(shop_name=shop_name, credentials=credentials)
 
         #: When set to True, ignore checking for supported actions on models.
         self.ignore_supported = ignore_supported
