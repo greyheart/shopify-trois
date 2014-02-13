@@ -7,6 +7,7 @@
     :copyright: (c) 2013 by Martin Samson
     :license: MIT, see LICENSE for more details.
 """
+from __future__ import absolute_import
 import requests
 import json
 
