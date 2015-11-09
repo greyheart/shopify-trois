@@ -78,17 +78,19 @@ class Request:
         parent_id = None
 
         if is_instance:
-            parent_pk = "{name}_{pk}".format(
-                name=parent.__name__.lower(),
-                pk=parent.primary_key
-            )
+            parent_id = getattr(model, "owner_id", None)
+            if not parent_id:
+                parent_pk = "{name}_{pk}".format(
+                    name=parent.__name__.lower(),
+                    pk=parent.primary_key
+                )
 
-            if not hasattr(model, parent_pk):
-                raise ShopifyException(
+                if not hasattr(model, parent_pk):
+                    raise ShopifyException(
                     "Missing parent primary key `%s`." % parent_pk
                 )
 
-            parent_id = getattr(model, parent_pk)
+                parent_id = getattr(model, parent_pk)
 
         else:
             parent_pk = "parent_id"
