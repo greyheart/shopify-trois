@@ -63,14 +63,8 @@ class PageMetafield(Metafield):
 class ProductMetafield(Metafield):
     is_subresource_of = Product
 
-
-# ProductVariantMetafield is currently disabled due to the relative complexity
-# of implementing it compared to the others.
-#
-# Boils down to looping the class resource ancestry.
-#
-# class ProductVariantMetafield(Metafield):
-#     is_subresource_of = ProductVariant
+class ProductVariantMetafield(Metafield):
+    is_subresource_of = ProductVariant
 
 
 __all__ = [
